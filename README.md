@@ -17,4 +17,5 @@ The main aim is a design and development of a fuzzy expert system for multi-agen
 ## Plannng steps
 | Date              | Description |
 | ------------- | ------------- |
-| jun - august 2023 | development of an interface system in matlab, continuing to search for and study relevant articles |
+| jun - august 2023 | development of an inference system in matlab, continuing to and study relevant articles |
+| september 2023 | description of the practical part of the work |
