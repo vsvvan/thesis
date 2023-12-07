@@ -1,0 +1,52 @@
+\section{Classic version of predator-prey game}
+
+
+The classical predator-prey model is a mathematical model used to study the dynamics of populations in a predator-prey ecosystem. The model typically consists of a set of ordinary differential equations that describe the change in the population of two species, such as predators and prey, over time.
+
+The model considers the rate of change in the prey population as a function of their own birth and death rates, and the rate of predation by the predators. Similarly, the rate of change in the predator population is a function of their own birth and death rates, and the rate of prey consumed.
+
+The model assumes that the populations of both species are continuously growing or declining depending on the balance of birth and death rates, and the interaction between the two species. In particular, the prey population grows when there are few predators and declines when there are many, and the predator population declines when there is little prey and grows when there is plenty.
+
+This model helps to understand the underlying mechanisms driving the fluctuations in populations of both species, and can be used to make predictions about future population dynamics based on changes in environmental conditions or other factors.
+
+The Lotka-Volterra equations describe an ecological predator-prey (or parasite-host) model which assumes that, for a set of fixed positive constants \(a\) (the growth rate of prey), \(b\) (the rate at which predators destroy prey), \(r\) (the death rate of predators), and \(c\) (the rate at which predators increase by consuming prey). The following conditions will be held for our computer simulation model.
+
+Let the prey population at time t be given by \(y_1(t)\), and the predator population by \(y_2(t)\). Assume that, in the absence of predators, the prey will grow exponentially according to \(y_1' = a \ y_1\) for a certain \(a > 0\). We also assume that the death rate of the prey due to interaction is proportional to \(y_1(t) \ y_2(t)\), with a positive proportionality constant. So:
+\(\\ y_1' (t) = a\ y_1(t) - b\ y_1(t)\ y_2(t)   \)
+
+Without prey, predators will die exponentially according to \(y_2'(t)=-r\ y_2\ dt\) for a certain \(r>0\). Their birth strongly depends on both population sizes, so we finally find for a certain \(c>0\):
+\( \\ y_2'(t) = -r\ y_2(t) + c\ y_1(t)\ y_2(t)  \)
+
+These equations lead to the following system of differential equations:  
+
+$$ \left\{
+\begin{array}{lr}
+y_1'(t) = a\ y_1(t) - b\ y_1(t)\ y_2(t)\\
+y_2'(t) = -r\ y_2(t) + c\ y_1(t)\ y_2(t)
+\end{array}
+\right. $$
+\newline
+ 
+We see that both \(( e^{at}, 0)\) and \((0, e^{-ct} )\) are solutions of \((y_1(t), y_2(t))\). From this system, we find that for every solution we must have 
+\(y_1' (\frac{r}{y_1} - c) +y_2' (\frac{a}{y_2} - b) = 0 \).
+
+Integrating both sides give us: 
+\[r\ log\ y_1(t) -   c\ y_1(t)  +  a\ log\ y_2(t)\ - \ b\ y_2(t) = constant. \]
+
+The Lotka-Volterra equations are a pair of first-order, non-linear, differential equations that describe the dynamics of biological systems in which two species interact. The earliest predator-prey model based on sound mathematical principles forms the basis of many models used today in the analysis of population dynamics, the original form has problems \cite{cpp1}.
+
+The game is usually represented by a payoff matrix, where each entry represents the payoffs (or utilities) to the predator and prey given their current strategies. The strategies in this game correspond to the population sizes of the predator and prey, and the payoffs are determined by the underlying population dynamics described by the predator-prey model.
+
+For example, suppose the prey population grows at a rate proportional to its size and the predator population grows at a rate proportional to the number of prey consumed. Then, the payoffs to the predator and prey can be represented as follows:
+
+
+Predator Payoff = \((a - b) * P - c * Q\),
+
+Prey Payoff = \(d * Q - e * P\),
+
+
+where \(P\) and \(Q\) are the population sizes of the predator and prey, respectively, \(a, b, c, d,\) and \(e\) are positive constants representing the growth and death rates of the populations, and the terms \((a - b) * P\) and \(d * Q\) represent the intrinsic growth rates of the populations. The terms \(-c * Q\) and \(-e * P\) represent the costs of predation and being preyed upon, respectively.
+
+This game has a unique Nash equilibrium, which is a state where neither player has an incentive to change its strategy, given the strategies of the other player. At the Nash equilibrium, the population sizes of both species are stable and remain constant over time.
+
+The classical predator-prey game provides a framework for analyzing the interplay between the populations of predators and prey in an ecosystem, and can be used to understand the factors that influence the stability and persistence of both species.

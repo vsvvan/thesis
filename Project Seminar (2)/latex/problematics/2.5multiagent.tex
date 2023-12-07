@@ -1,0 +1,29 @@
+
+\section{Multiagent system}
+
+
+An agent is an autonomous computer system that functions on behalf of its owner or user. Unlike being told what to do, an agent can independently determine what actions it must take to meet its objectives. A multiagent system comprises several agents that interact with each other by exchanging messages through a network infrastructure. In the case of multiagent systems, each agent represents or acts on behalf of users or owners who may have different goals and motivations. Therefore, to interact successfully, agents must possess the necessary skills to collaborate, coordinate, and negotiate with each other, much like how we interact with people in our daily lives.
+
+Multiagent systems are - by definition - a subclass of concurrent
+systems, and there are some in the distributed systems community who
+question whether multiagent systems are sufficiently different to 'standard' distributed/
+concurrent systems to merit separate study.
+
+In multiagent systems, however, there are two important twists to the concur -
+rent systems story. \cite{MultiAgent}
+\begin{itemize}
+  \item  First, because agents are assumed to be autonomous - capable of making
+independent decisions about what to do in order to satisfy their design
+objectives - it is generally assumed that the synchronization and coordination
+structures in a multiagent system are not hardwired in at design
+time, as they typically are in standard concurrent/distributed systems.
+We therefore need mechanisms that will allow agents to synchronize and
+coordinate their activities at run time.
+  \item  Second, the encounters that occur among computing elements in a multiagent
+system are economic encounters, in the sense that they are encounters
+between self-interested entities. In a classic distributed/concurrent system,
+all the computing elements are implicitly assumed to share a common goal
+(of making the overall system function correctly). In multiagent systems, it is
+assumed instead that agents are primarily concerned with their own welfare
+(although of course they will be acting on behalf of some user/owner).
+\end{itemize}

@@ -1,0 +1,125 @@
+\section{Introduction to the fuzzy logic}
+
+
+Fuzzy logic, a mathematical theory for uncertainty, was introduced by Zadeh in 1965 as an extension of boolean logic, based on the mathematical theory of fuzzy sets. Fuzzy logic allows for a condition to be in a state other than just true or false by introducing the concept of degree in the verification process. This enables the consideration of inaccuracies and uncertainties, giving reasoning a valuable degree of flexibility. One of the many benefits of fuzzy logic is its ability to formalize human reasoning through natural language-based rules. Fuzzy systems are designed to emulate human reasoning processes, and if-then rules are used to represent relationships explicitly.
+
+\subsection{Fuzzy sets}
+
+Fuzzy sets generalize the classical concept of a set. Their motivation stems from the following idea: If somebody wants us to specify a set of all speed values which can be referred as a high speed value. First we can say that the speed range for what we can specify as a high speed is between 130 and 480. So, we start with the set \(U = [130, 480]\) (kph). In further reasoning, however, we will be confronted with insurmountable difficulties,
+namely, we find out that we are not able to specify high speed value precisely. For example,
+if we decide that the high speed is at least 140, then we can
+immediately ask: “What about the speed 139 kph?” We are not able to distinguish
+such speed difference by naked eye only. But, according to our decision,
+the first value is considering as a high speed value, and the second one is not. We arrive at clearly counterintuitive
+conclusion. Therefore, in a common practice, we cannot understand numbers to
+be fully precise but rather to be imprecise, for example, “approximately 150”. Alternatively,
+we can use vague linguistic expressions such as “slow” and “very fast”. \cite{NOPEDV16}
+The general definition of a fuzzy set is the following.
+
+Let \(U\) be a set called universe. A fuzzy set is a function
+\[A : U \rightarrow [0, 1].\]
+
+This function is also called a membership function of the fuzzy set A. If \(u \in \ U\), then the number \(A(u) \in [0, 1]\) is called a membership degree of \(u\) in the fuzzy set \(A\).
+
+\subsection{Fuzzy operators}
+
+The notation and operations of fuzzy logic are based on classical logic and propositional calculus, a modern form of classical logic notation. In classical logic, propositions are either true or false, with nothing in between. It is often common to assign numerical values to the truth of propositions, where 1 means true and 0 means false. An important principle of classical logic is the Law of Excluded Middle, which states that a proposition must be either true or false, and the Law of Non-contradiction, which states that a proposition cannot be both true and false. A statement cannot be true and false at the same time.
+
+The truth value of complex propositions is obtained by combining the truth values
+of the elemental propositions, which enter into the complex proposition. The most
+common operators are NOT, AND (A AND B is true if both A
+and B are true) and OR (A OR B is true if either A or B or both are true.)\cite{FesFr}
+
+The evaluation of formulae A AND B and A OR B is shown in Table \ref{table:andor}, a presentation is called truth table.
+
+\begin{table}[ht]
+\caption{Truth table for AND and OR logic operators}
+\centering
+\begin{tabular}{c c c c}    \toprule
+\emph{A} & \emph{B} &\emph{A AND B}& \emph{A OR B}   \\\midrule
+0    & 0  & 0  & 0  \\ 
+0  &1 &0 & 1\\ 
+1 & 0 & 0 & 1\\
+1  & 1 & 1 & 1 \\
+ \hline
+\end{tabular}
+\label{table:andor}
+\end{table}
+
+For all fuzzy operators, 
+\[NOT\  A = 1-A\]
+
+\(A \ AND \ B\)
+
+Zadeh operator: \(A \  AND \  B = min(A, \  B)\)
+
+Probabilistic operator, assuming independance: \( A \  AND \  B = A \ast B\)
+
+Bounded difference operator: \(A\  AND \  B = max(0, A+B-1)\)
+
+\(A \  OR \  B\)
+
+Zadeh operator: \(A \  OR \  B = max(A, B)\)
+
+Probabilistic operator, assuming independance: \( A \  OR \  B = A + B - A \ast B\)
+
+Bounded difference operator: \(A \  OR \  B = min(1, A+B)\)
+
+
+\subsection{Fuzzification}
+
+Fuzzification means to find grades of membership of linguistic values of a linguistic
+variable corresponding to an input number, scalar or fuzzy.
+
+
+
+\subsection{Defuzzification}
+
+At the end of an advanced rule-firing sequence in a fuzzy expert system, a fuzzy conclusion \(C\) is often reached. However, \(C\) is a linguistic variable with graded membership values, and we usually need to compute a single scalar that corresponds to these values. This is where defuzzification comes in – the process of converting \(C\) into a scalar that can be sent as a signal to the process in question, especially in fuzzy control.
+Defuzzification is more intricate than fuzzification, with multiple choices to be made and many methods proposed. In this article, we will highlight the essential areas where choices must be made and identify the most commonly used choices, rather than exploring every possibility.
+Assuming we know the grades of membership of the fuzzy set to be defuzzified, the first step in defuzzification is to decide how to modify the membership functions for linguistic values to reflect that each value probably has a different grade of membership. This modification involves ANDing the membership function \(m(x,value)\) with \(m(value,lvar)\), where \(lvar\) is the linguistic variable of which value is a member, \(m(x,value)\) is the membership of real number x in value, and \(m(value,lvar)\) is the membership of value in \(lvar\). The result of the modification is a new membership function for value called \(m0(x,value)\).
+
+The most common choices for the AND operator are the Zadehian
+min(A, B), often known as the Mamdani method because of its early successful
+use in process control by Mamdani (1976). 
+
+Next, the individual membership functions must be aggregated
+into a single membership function for the entire linguistic variable. Aggregation
+operators resemble t-conorms, but with fewer restrictions, the Zadehian max OR operator is frequently used.
+
+In the last step, we find a single number compatible with the membership function
+and this number will be the output from this final step in the
+defuzzification process.\cite{FesFr}
+
+The fuzzy set has a following form \(A =\{a_1 / u_1, ... , a_r / u_r \} \) defined on a finite universe \(U\).\cite{NOPEDV16}
+
+Center of Gravity/Area defuzzification is the most often used method and is used for fuzzy approximation problems:
+\[COG(A)=\frac{{\sum_{k=1}^r {A(u_k)\cdot u_k}}}{\sum_{k=1}^r {A(u_k)}}\]
+
+Mean of maxima defuzzification is computationally simpler than COG:
+
+\[MOM(A)=\frac{1}{r_{max}}\sum_{j=1}^{r_{max}} {u_j^{max}}\]
+
+First of maxima and last of maxima defuzzifications are the simplest defuzzification methods:
+
+\[FOM(A) = min\{u_j^{max}| j= 1, ...,r_{max}\},\]
+
+\[LOM(A) = max\{u_j^{max}| j= 1, ...,r_{max}\}.\]
+
+Center of sums defuzzification is a variant of COG. Let us assume that set a is a union of fuzzy sets
+\[A=B_1\cup ... \cup B_s .\]
+\[COS(A)=\frac{\sum_{j=1}^{s} {(\sum_{k=1}^{r} {u_k\cdot B_j (u_k)})}}{\sum_{j=1}^{s} {\sum_{k=1}^{r} {B_j (u_k)}}}.\]
+
+DEE fuzzification, it classifies a fuzzy set to
+be defuzzified into one of the three types—\(Z\), \(M\), and \(S\):
+
+\[
+  DEE(A)=
+  \begin{cases}
+    LOM(A) &\text{if $A$ is of type $Z$} \\
+    MOM(A) &\text{if $A$ is of type $M$}\\
+    FOM(A) &\text{if $A$ is of type $S$}.
+  \end{cases}
+\]
+
+

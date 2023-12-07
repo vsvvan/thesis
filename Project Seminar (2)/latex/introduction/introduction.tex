@@ -1,0 +1,95 @@
+\chapter{Introduction to fuzzy modeling}
+Fuzzy modeling is a special branch of mathematical modeling that has two goals:
+(i) to construct models based on information that can be given not only in numbers
+but also, imprecisely, usually in a form of expressions of natural language; (ii) to
+construct models with less computational demands, which are more robust, that is,
+little sensitive to changes in the input data.
+
+In comparison with classical models, the fuzzy ones are closer to human way of
+thinking. For example, when processing images, classical methods work with single
+pixels. People, however, do not see pixels but larger and usually imprecisely delineated parts of the image. This is the main reason why it is so difficult to develop
+methods that are as powerful as the human eye. It happens quite often that some objective measure says that a given image is good, but the human eye sees it differently and
+says “no”.
+
+Fuzzy modeling is a group of special mathematical methods that make it possible to
+include in the model imprecise or vaguely formulated expert information that is often
+characterized using natural language. The developed models (we call them fuzzy
+models) are very successful because they provide solution in situations when traditional mathematical models fail—either due to their non-adequacy, or due to their
+inability to utilize the full available information.
+
+Note that the idea to include imprecise information in our models contradicts to what has always been required: as high precision as possible. However, there is a good reason for doing it, we face a variance between relevance and precision. The so-called principle of incompatibility \cite{zadeh} says the following:
+
+As a complexity of a system increases, our ability to make absolute, precise, and significant statements about the system's behavior reduces. At some moment, there will be a trade-off between precision and relevance. Increase in precision can be gained only through decrease in relevance; increase in relevance can be gained only through decrease in precision.
+
+But at the same time, we argue that full precision is only our illusion and is not achievable, even in principle. Otherwise, we could obtain the same result independently on the chosen precision. But this is, in general, impossible. 
+
+The attempt to utilize the imprecise information in mathematical models led to the
+development of fuzzy modeling techniques. Recall that mathematical models manipulate with variables. In traditional models, values of the considered variable are taken
+from some set of numbers called a universe. Traditional mathematical models manipulate directly with its elements. In a fuzzy model, however, variables may represent
+fuzzy subsets of the universe. Hence, fuzzy models require partitioning of the universe into parts, for which it is specific that they need not be precisely formed and
+can overlap \cite{NOPEDV16}.
+
+The most important tool in fuzzy modeling are fuzzy IF-THEN rules. These are
+special expressions, which characterize relations among parts of two or more universes. For example, let us consider an electric boiler and two universes: values
+of electric current (A) and temperature  (\(^\circ\)  C ). Then the following is a typical fuzzy IF-THEN rule: IF electric current is very strong, THEN temperature is high.
+
+Benefits of a fuzzy (inference) systems.
+\begin{itemize}
+    \item This system can handle all kinds of input, even if the information is not exact, unclear or has background noise.
+\item Making Fuzzy Logic Systems is simple and easy to understand.
+\item Fuzzy logic uses math ideas called set theory, and its reasoning is easy to understand.
+\item This helps solve difficult problems in many areas of life really well because it works like how a person thinks and makes choices.
+\item The computer rules can be explained using only a small amount of information, so it doesn't need much space to remember.
+\end{itemize}
+
+Not so good things about fuzzy (inference) system.
+\begin{itemize}
+    \item Lots of scientists have ideas to fix a problem with fuzzy logic, which might make things unclear. We don't have a set way to solve a problem using fuzzy logic.
+    \item It's usually hard or impossible to prove what makes it unique because we don't always have a mathematical explanation of how we do it.
+\item Fuzzy logic uses both exact and inexact information, which can lead to less accuracy.
+\end{itemize}
+
+Applications
+\begin{itemize}
+    \item This thing helps spacecraft and satellites stay at the right height in outer space. People use it in the aerospace industry.
+\item This thing helps control how fast cars go and how traffic moves.
+\item It helps big companies make better decisions and assess individuals.
+\item This thing can be used in the chemical industry to control the pH, help with drying things, and with a process called chemical distillation.
+\item Fuzzy logic is a type of math that helps computers understand human language and do smart things. It's very useful in AI.
+\item Fuzzy logic is often used in modern control systems, like expert systems.
+\item Fuzzy Logic works like a person's decision-making process, but faster, and it is often used with Neural Networks. To make data more meaningful, we combine it and create partial truths using Fuzzy sets.
+\end{itemize}
+
+It should be emphasized that robustness is a typical feature not only of fuzzy
+control, but also of applications of fuzzy modeling in general. For example, when
+applying fuzzy modeling methods to character recognition, we need only few patterns, while in classical solutions, we need hundreds of them. 
+
+
+
+
+%%%%%% does not need to cite
+
+% articles about streaks
+% https://cds.cern.ch/record/1707548/files/978-1-4939-0629-1_BookBackMatter.pdf
+% https://conference.sdo.esoc.esa.int/proceedings/neosst1/paper/444/NEOSST1-paper444.pdf
+% https://www.aanda.org/articles/aa/full_html/2020/12/aa37765-20/aa37765-20.html
+% https://reader.elsevier.com/reader/sd/pii/S0094576521001211?token=93F8903DF4BF28EC64C9DE8B86B59D6C71136A835A32EB40977BA9A729EB5DAFCCF2437D4B81A5717C58E2BC46B52704&originRegion=eu-west-1&originCreation=20210804182521
+
+% articles about astronomical imagining
+% https://link.springer.com/chapter/10.1007/978-3-319-21969-1_37
+% https://subarutelescope.org/staff/guyon/15teaching.web/00AstrOptics.web/AstrOpt_01fund.pdf
+
+% articles about ccd artifacts
+% https://arxiv.org/pdf/1601.07182.pdf
+% https://mwcraig.github.io/ccd-as-book/01-00-Understanding-an-astronomical-CCD-image.html
+
+% articles about noises
+% https://hamamatsu.magnet.fsu.edu/articles/ccdsnr.html
+% https://www.mssl.ucl.ac.uk/www_detector/ccdgroup/optheory/darkcurrent.html
+% https://camera.hamamatsu.com/jp/en/technical_guides/calculating_snr/index.html
+
+
+
+
+
+
