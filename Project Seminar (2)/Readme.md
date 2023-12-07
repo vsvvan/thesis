@@ -1,6 +1,6 @@
 # An adaptive fuzzy inference in predator-prey pursuit game
 
-https://valeriiadanina.wixsite.com/thesis
+[Project webpage](https://valeriiadanina.wixsite.com/thesis)
 
 ## Aim
 
