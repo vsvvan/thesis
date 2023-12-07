@@ -1,5 +1,7 @@
 # An adaptive fuzzy inference in predator-prey pursuit game
 
+https://valeriiadanina.wixsite.com/thesis
+
 ## Aim
 
 The main aim is a design and development of a fuzzy expert system for multi-agent simulation of predator-prey pursuit game enabling implementation of suitable AI learning techniques.
